@@ -1,0 +1,46 @@
+@usersp = http://localhost:3000/user/usersp
+@login = http://localhost:3000/user/login
+@getMaterias = http://localhost:3000/user/getMaterias
+@addMateria = http://localhost:3000/user/addMateria
+
+@cursarMateria = http://localhost:3000/user/cursarMateria
+
+POST {{login}}
+Content-Type: application/json
+
+
+{
+    "dni" : "10",
+    "contra" : "1234"
+}
+
+###
+POST {{usersp}}
+Content-Type: application/json
+
+
+{
+    "dni" : "10",
+    "nombre" : "Pepe",
+    "contra" : "1234"
+}
+###
+POST {{addMateria}}
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkbmkiOiIxMCIsImlhdCI6MTcxODcwOTg2NX0.wuZzOG5EcSO5qF1tHtgYcjfAs9tRAckV-o3JyiWjlsA
+
+{
+    "nombre_materia" : "Const.Softwareee"
+}
+###
+POST {{cursarMateria}}
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkbmkiOiIxMCIsImlhdCI6MTcxODcwOTg2NX0.wuZzOG5EcSO5qF1tHtgYcjfAs9tRAckV-o3JyiWjlsA
+
+{
+    "dni": "0",
+    "id_m": 14
+}
+###
+GET {{getMaterias}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkbmkiOiIxMCIsImlhdCI6MTcxODcwOTg2NX0.wuZzOG5EcSO5qF1tHtgYcjfAs9tRAckV-o3JyiWjlsA
